@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
-
+import axios from "axios";
 import Button from "@mui/material/Button";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Dialog from "@mui/material/Dialog";
@@ -58,7 +58,13 @@ const AddReservation = () => {
     console.log(formData);
   };
 
-  const handleSumbit = () => {
+  const handleSumbit = async () => {
+    try {
+      const res = await axios.post("", formData);
+      return res;
+    } catch (e) {
+      console.log(e);
+    }
     console.log(formData);
   };
   return (
